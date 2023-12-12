@@ -3,7 +3,7 @@ import object from '../assets/objects.svg'
 const Partners = () => {
     return(
         <div className="relative flex w-full justify-end ">
-        <ul className="w-[90%] flex justify-between font-bold text-2xl text-gray-500 p-11 overflow-x-hidden">
+        <ul className="w-[90%] flex gap-8 md:justify-between font-bold text-2xl text-gray-500 p-11 overflow-x-hidden">
             <li>
                 tripadvisor
             </li>

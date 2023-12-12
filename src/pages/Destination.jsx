@@ -2,7 +2,7 @@ import temple from '../assets/temple.jpg'
 
 const Destination = () => {
     return (
-        <div className="flex flex-col px-24 py-14 gap-12">
+        <div className="flex flex-col px-4 sm:px-24 py-14 gap-12">
             <div className="flex items-center justify-between">
                 <p className="flex flex-col gap-1 font-bold text-3xl">
                     <span className="text-[#e95495] text-lg font-bold">TOP DESTINATION</span>
@@ -14,9 +14,9 @@ const Destination = () => {
                 </div>
             </div>
 
-            <div className="flex overflow-x-hidden gap-24">
+            <div className="flex overflow-x-hidden gap-24 justify-center">
 
-                <div className="flex flex-col border-2 shadow-xl w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb] ">
+                <div className="flex flex-col border-2 shadow-xl min-w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb] ">
                     <img src={temple} alt="" className="h-[400px] rounded-t-2xl " />
                     <div className="">
                         <div className="flex font-bold justify-between p-3">
@@ -29,7 +29,7 @@ const Destination = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col border-2 shadow-xl w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb]">
+                <div className="flex flex-col border-2 shadow-xl min-w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb]">
                     <img src={temple} alt="" className="h-[400px] rounded-t-2xl " />
                     <div className="">
                         <div className="flex font-bold justify-between p-3">
@@ -42,8 +42,8 @@ const Destination = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col border-2 shadow-xl w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb]">
-                    <img src={temple} alt="" className="h-[400px] rounded-t-2xl " />
+                <div className="flex flex-col border-2 shadow-xl min-w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb]">
+                    <img src={temple} alt="" className="rounded-t-2xl " />
                     <div className="">
                         <div className="flex font-bold justify-between p-3">
                             <h2>Paradise Beach</h2>

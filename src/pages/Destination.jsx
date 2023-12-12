@@ -17,7 +17,7 @@ const Destination = () => {
             <div className="flex overflow-x-hidden gap-24 justify-center">
 
                 <div className="flex flex-col border-2 shadow-xl min-w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb] ">
-                    <img src={temple} alt="" className="h-[400px] rounded-t-2xl " />
+                    <img src={temple} alt="" className="max-h-[500px] rounded-t-2xl " />
                     <div className="">
                         <div className="flex font-bold justify-between p-3">
                             <h2>Paradise Beach</h2>
@@ -30,7 +30,7 @@ const Destination = () => {
                 </div>
 
                 <div className="flex flex-col border-2 shadow-xl min-w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb]">
-                    <img src={temple} alt="" className="h-[400px] rounded-t-2xl " />
+                    <img src={temple} alt="" className="max-h-[500px] rounded-t-2xl " />
                     <div className="">
                         <div className="flex font-bold justify-between p-3">
                             <h2>Paradise Beach</h2>
@@ -43,7 +43,7 @@ const Destination = () => {
                 </div>
 
                 <div className="flex flex-col border-2 shadow-xl min-w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb]">
-                    <img src={temple} alt="" className="rounded-t-2xl " />
+                    <img src={temple} alt="" className="max-h-[500px]  rounded-t-2xl " />
                     <div className="">
                         <div className="flex font-bold justify-between p-3">
                             <h2>Paradise Beach</h2>

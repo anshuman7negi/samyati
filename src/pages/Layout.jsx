@@ -1,3 +1,5 @@
+import BuddyHome from "../components/BuddyHome";
+import Footer from "../components/Footer";
 import Partners from "../components/Partners";
 import Destination from "./Destination";
 import Home from "./Home"
@@ -13,6 +15,8 @@ const Layout = () => {
           <Partners />
           <Services />
           <Destination />
+          <BuddyHome />
+          <Footer />
         </div>
     )
 }

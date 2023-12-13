@@ -1,6 +1,17 @@
 import temple from '../assets/temple.jpg'
 
 const Destination = () => {
+
+    const leftClick = () => {
+        const box = document.querySelector('.carosoul');
+        box.scrollLeft -= 360;
+      };
+    
+      const rightClick = () => {
+        const box = document.querySelector('.carosoul');
+        box.scrollLeft += 360;
+      };
+
     return (
         <div className="flex flex-col px-4 sm:px-24 py-14 gap-12">
             <div className="flex items-center justify-between">
@@ -9,12 +20,22 @@ const Destination = () => {
                     Explore top destination
                 </p>
                 <div className="flex gap-3">
-                    <button className="p-4 rounded-full border-2 font-bold hover:bg-purple-600 hover:text-white shadow-xl">&lt;</button>
-                    <button className="p-4 rounded-full border-2 font-bold hover:bg-purple-600 hover:text-white shadow-xl">&gt;</button>
+                    <button 
+                    className="p-4 rounded-full border-2 font-bold hover:bg-purple-600 hover:text-white shadow-xl"
+                    onClick={leftClick}
+                    >
+                        &lt;
+                    </button>
+                    <button 
+                    className="p-4 rounded-full border-2 font-bold hover:bg-purple-600 hover:text-white shadow-xl"
+                    onClick={rightClick}
+                    >
+                        &gt;
+                    </button>
                 </div>
             </div>
 
-            <div className="flex overflow-x-hidden gap-24 justify-center">
+            <div className="flex overflow-x-hidden gap-24 scroll-smooth carosoul">
 
                 <div className="flex flex-col border-2 shadow-xl min-w-[300px] items-center gap-5 rounded-2xl bg-[#fdefeb] ">
                     <img src={temple} alt="" className="max-h-[500px] rounded-t-2xl " />

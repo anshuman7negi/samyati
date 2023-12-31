@@ -16,11 +16,24 @@ export const getBuddies = createAsyncThunk(
     }
 );
 
-export const addBuddy = createAsyncThunk(
-    'buddy/addbuddy',
-    async (_, thunkAPI) => {
+export const findBuddies = createAsyncThunk(
+    'buddy/findBuddies',
+    async (findbuddy, thunkAPI) => {
         try {
-            const response = await axios.get(`${BASE_URL}find_buddy`);
+            const response = await axios.post(`${BASE_URL}find_buddy`, {findbuddy});
+            return response.data;
+        }
+        catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+)
+
+export const deleteBuddies = createAsyncThunk(
+    'buddy/findBuddies',
+    async (buddy_id, thunkAPI) => {
+        try {
+            const response = await axios.delete(`${BASE_URL}delete_buddy/${buddy_id}`);
             return response.data;
         }
         catch (error) {
@@ -51,6 +64,9 @@ const findBuddy = createSlice({
             .addCase(getBuddies.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
+            })
+            .addCase(findBuddies.fulfilled, (state, action) => {
+                state.message = action.payload;
             });
     },
 });

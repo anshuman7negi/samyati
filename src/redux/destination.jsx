@@ -3,11 +3,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const BASE_URL = 'http://127.0.0.1:3000/api/';
 
-export const getBuddies = createAsyncThunk(
-    'buddy/getBuddies',
+export const getDestination = createAsyncThunk(
+    'buddy/getDestination',
     async (_, thunkAPI) => {
         try {
-            const response = await axios.get(`${BASE_URL}buddies`);
+            const response = await axios.get(`${BASE_URL}destinations`);
             return response.data;
         }
         catch (error) {
@@ -16,11 +16,12 @@ export const getBuddies = createAsyncThunk(
     }
 );
 
-export const findBuddies = createAsyncThunk(
+export const createDestination = createAsyncThunk(
     'buddy/findBuddies',
-    async (findbuddy, thunkAPI) => {
+    async (destination, thunkAPI) => {
         try {
-            const response = await axios.post(`${BASE_URL}find_buddy`, {findbuddy});
+            console.log(destination);
+            const response = await axios.post(`${BASE_URL}create_destination`, {destination});
             return response.data;
         }
         catch (error) {
@@ -29,11 +30,11 @@ export const findBuddies = createAsyncThunk(
     }
 )
 
-export const deleteBuddies = createAsyncThunk(
-    'buddy/findBuddies',
-    async (buddy_id, thunkAPI) => {
+export const deleteDestination = createAsyncThunk(
+    'buddy/deleteDestination',
+    async (destination_id, thunkAPI) => {
         try {
-            const response = await axios.delete(`${BASE_URL}delete_buddy/${buddy_id}`);
+            const response = await axios.delete(`${BASE_URL}delete_destination/${destination_id}`);
             return response.data;
         }
         catch (error) {
@@ -45,7 +46,7 @@ export const deleteBuddies = createAsyncThunk(
 const initialState = {
     isLoading: false,
     error: undefined,
-    message: [],
+    destinations: [],
 };
 
 const findBuddy = createSlice({
@@ -54,19 +55,19 @@ const findBuddy = createSlice({
     reducers: {},
     extraReducers(builder) {
         builder
-            .addCase(getBuddies.pending, (state) => {
+            .addCase(getDestination.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(getBuddies.fulfilled, (state, action) => {
+            .addCase(getDestination.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.message = action.payload;
+                state.destinations = action.payload;
             })
-            .addCase(getBuddies.rejected, (state, action) => {
+            .addCase(getDestination.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(findBuddies.fulfilled, (state, action) => {
-                state.message = action.payload;
+            .addCase(createDestination.fulfilled, (state, action) => {
+                state.destinations = action.payload;
             });
     },
 });

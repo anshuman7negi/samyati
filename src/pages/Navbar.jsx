@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className="flex item-center justify-between px-9 py-4 font-bold bg-gradient-to-r from-[#ffdcd1] to-[#fdfbfa]">
+        <nav className="sticky top-0 flex item-center justify-between px-9 py-4 font-bold bg-gradient-to-r from-[#ffdcd1] to-[#fdfbfa]">
             <h1 className="text-xl">SAMYATI</h1>
             <ul className="hidden sm:flex gap-8">
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-                <li>Discover</li>
+                <li>
+                    <Link to="/destinations">
+                        Discover
+                    </Link>
+                </li>
                 <li>
                     <Link to="/buddy">Buddy</Link>
                 </li>
